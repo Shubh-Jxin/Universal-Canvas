@@ -30,38 +30,7 @@ function setup(){
     title.position(600,20);
     title.html("Universal Canvas")
 
-    
 
-
-    //this is a temporary feature
-    info=createElement("h3");
-    info.position(1120,55);
-    info.html("Choose a Color before you start drawing the entire drawing will be of that color then")
-
-    redButton=createButton("Red Color");
-    redButton.position(1200,150)
-    
-    greenButton=createButton("Green Color");
-    greenButton.position(1200,200)
-
-    blueButton=createButton("Blue Color");
-    blueButton.position(1200,250)
-
-    blackButton=createButton("Black Color");
-    blackButton.position(1200,300)
-
-    yellowButton=createButton("Yellow Color");
-    yellowButton.position(1200,350)
-
-    pinkButton=createButton("Pink Color");
-    pinkButton.position(1200,400)
-
-    slider= createSlider(1,10,1);
-    slider.position(1200,600)
-
-    info2=createElement("h3");
-    info2.position(1150,500);
-    info2.html("You can also adjust the stroke weight using this slider (1-10)")
     
 }
 
@@ -83,49 +52,11 @@ function draw(){
         currentPath.push(point);
     }
 
-    //to change the color of the drawings
-    redButton.mousePressed(function(){
-        color=color(255,0,0)
-        stroke(color);
-        colorArray.push(color)
-    })
-
-    greenButton.mousePressed(function(){
-        color=color(0,255,0)
-        stroke(color);
-        colorArray.push(color)
-    })
-
-    blueButton.mousePressed(function(){
-        color=color(0,0,255)
-        stroke(color);
-        colorArray.push(color)
-    })
-
-    blackButton.mousePressed(function(){
-        color=color(0)
-        stroke(color);
-        colorArray.push(color)
-    })
-
-    yellowButton.mousePressed(function(){
-        color=color('yellow')
-        stroke(color);
-        colorArray.push(color)
-    })
-
-    pinkButton.mousePressed(function(){
-        color=color(255,192,203)
-        stroke(color);
-        colorArray.push(color)
-    })
-
-
 
     //basis of drawings
-    strokeWeight(slider.value());
+    strokeWeight(5);
     noFill();
-    
+    stroke(0)
         //nested loops
         //first loop is looping through all the paths stored in the drawing and storing them in an array called path
         for(var j=0;j<drawing.length;j++){
@@ -159,3 +90,72 @@ function endPath(){
     //pushing the paths in the drawing array
     drawing.push(currentPath);
 }
+
+
+
+//this is a temporary feature
+    // info=createElement("h3");
+    // info.position(1120,55);
+    // info.html("Choose a Color before you start drawing the entire drawing will be of that color then")
+
+    // redButton=createButton("Red Color");
+    // redButton.position(1200,150)
+    
+    // greenButton=createButton("Green Color");
+    // greenButton.position(1200,200)
+
+    // blueButton=createButton("Blue Color");
+    // blueButton.position(1200,250)
+
+    // blackButton=createButton("Black Color");
+    // blackButton.position(1200,300)
+
+    // yellowButton=createButton("Yellow Color");
+    // yellowButton.position(1200,350)
+
+    // pinkButton=createButton("Pink Color");
+    // pinkButton.position(1200,400)
+
+    // slider= createSlider(1,10,1);
+    // slider.position(1200,600)
+
+    // info2=createElement("h3");
+    // info2.position(1150,500);
+    // info2.html("You can also adjust the stroke weight using this slider (1-10)")
+
+    //to change the color of the drawings
+    // redButton.mousePressed(function(){
+    //     color=color(255,0,0)
+    //     stroke(color);
+    //     colorArray.push(color)
+    // })
+
+    // greenButton.mousePressed(function(){
+    //     color=color(0,255,0)
+    //     stroke(color);
+    //     colorArray.push(color)
+    // })
+
+    // blueButton.mousePressed(function(){
+    //     color=color(0,0,255)
+    //     stroke(color);
+    //     colorArray.push(color)
+    // })
+
+    // blackButton.mousePressed(function(){
+    //     color=color(0)
+    //     stroke(color);
+    //     colorArray.push(color)
+    // })
+
+    // yellowButton.mousePressed(function(){
+    //     color=color('yellow')
+    //     stroke(color);
+    //     colorArray.push(color)
+    // })
+
+    // pinkButton.mousePressed(function(){
+    //     color=color(255,192,203)
+    //     stroke(color);
+    //     colorArray.push(color)
+    // })
